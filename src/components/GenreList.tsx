@@ -1,6 +1,10 @@
-import useGenres from "../hooks/useGenres";
+import useGenres, { type Genre } from "../hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
+}
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
   if (isLoading)
     return (
@@ -19,7 +23,14 @@ const GenreList = () => {
             className="w-10 h-10 rounded-md object-cover"
           />
 
-          <span className="text-sm font-medium">{genre.name}</span>
+          <button
+            className={`${
+              genre.id === selectedGenre?.id ? "font-bold" : "font-normal"
+            } px-3 py-2 text-left w-full`}
+            onClick={() => onSelectGenre(genre)}
+          >
+            {genre.name}
+          </button>
         </li>
       ))}
     </ul>

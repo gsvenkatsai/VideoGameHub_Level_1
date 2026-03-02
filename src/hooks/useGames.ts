@@ -1,4 +1,5 @@
 import useData from "./useData";
+import type { Genre } from "./useGenres";
 
 //interfaces are created to create a object with particular attribute
 export interface Platform{
@@ -13,6 +14,6 @@ export interface Game {
   metacritic: number;
   parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
-const useGames=()=> useData<Game>('/games');
+const useGames=(selectedGenre:Genre|null)=> useData<Game>('/games',{params:{genres:selectedGenre?.id}}, [selectedGenre?.id]);
 
 export default useGames;
