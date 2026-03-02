@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import PlatformSelecter from "./components/PlatformSelecter";
 import type { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -32,6 +33,7 @@ const App = () => {
         />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">
+        <GameHeading gameQuery={gameQuery} />
         <div className="space-y-6">
           <div className="flex gap-10">
             <PlatformSelecter
