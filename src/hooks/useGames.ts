@@ -12,6 +12,7 @@ export interface Game {
   id: number;
   name: string;
   background_image: string;
+  metacritic: number;
   parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
 interface FetchGameResponse {
