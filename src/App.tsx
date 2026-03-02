@@ -1,9 +1,13 @@
+import "./index.css";
+
 import { useState } from "react";
+import type { Genre } from "./hooks/useGenres";
+
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
-import "./index.css";
-import type { Genre } from "./hooks/useGenres";
+import PlatformSelecter from "./components/PlatformSelecter";
+
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   return (
@@ -18,6 +22,7 @@ const App = () => {
         />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">
+        <PlatformSelecter />
         <GameGrid selectedGenre={selectedGenre} />
       </main>
     </div>
