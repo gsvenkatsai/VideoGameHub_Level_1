@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
-const NavBar = () => {
+import SearchInput from "./SearchInput";
+
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     if (darkMode) {
@@ -15,15 +21,18 @@ const NavBar = () => {
         <img src={logo} alt="logo" className="w-16 h-16" />
         <div className="text-lg font-semibold">Video Game Hub</div>
       </div>
-      <button
-        onClick={() => {
-          console.log("clicked");
-          setDarkMode((prev) => !prev);
-        }}
-        className="px-4 py-2 bg-gray-200 text-black dark:bg-gray-300 dark:text-black rounded"
-      >
-        Toggle Theme
-      </button>
+      <div className="flex gap-4">
+        <SearchInput onSearch={onSearch} />
+        <button
+          onClick={() => {
+            console.log("clicked");
+            setDarkMode((prev) => !prev);
+          }}
+          className="px-4 py-2 bg-gray-200 text-black dark:bg-gray-300 dark:text-black rounded"
+        >
+          Toggle Theme
+        </button>
+      </div>
     </nav>
   );
 };
