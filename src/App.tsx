@@ -1,4 +1,5 @@
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import "./index.css";
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
         <NavBar></NavBar>
       </nav>
       <aside className="bg-gray-200 dark:bg-black dark:text-white p-4 hidden min-[450px]:block">
-        SideBar
+        <GenreList />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">
         <GameGrid />
