@@ -3,10 +3,16 @@ import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
 //interfaces are created to create a object with particular attribute
+export interface Platform{
+  id:number;
+  name:string;
+  slug:string;
+}
 export interface Game {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
 interface FetchGameResponse {
   count: number;

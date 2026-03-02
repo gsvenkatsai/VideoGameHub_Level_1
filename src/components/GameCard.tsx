@@ -2,6 +2,7 @@
 import type { Game } from "../hooks/useGames";
 // Generic reusable Card wrapper component
 import Card from "./Card";
+import PlatfromIconList from "./PlatfromIconList";
 // Props contract for this component
 // We expect a full Game object
 interface Props {
@@ -35,6 +36,9 @@ const GameCard = ({ game }: Props) => {
       <div className="p-4">
         {/* Game title */}
         <h2 className="text-lg font-semibold">{game.name}</h2>
+        <PlatfromIconList
+          platforms={game.parent_platforms.map((p) => p.platform)}
+        />
       </div>
     </Card>
   );
