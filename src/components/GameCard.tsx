@@ -1,6 +1,6 @@
 // Import ONLY the type (removed at compile time, no JS output)
 import type { Game } from "../hooks/useGames";
-import getCroppedImageURL from "../services/image-url";
+// import getCroppedImageURL from "../services/image-url";
 // Generic reusable Card wrapper component
 import Card from "./Card";
 import CriticScore from "./CriticScore";
