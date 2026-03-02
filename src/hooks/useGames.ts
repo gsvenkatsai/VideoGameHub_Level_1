@@ -12,6 +12,7 @@ export interface Game {
   name: string;
   background_image: string;
   metacritic: number;
+  rating_top:number;
   parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
 const useGames =(gameQuery:GameQuery) => useData<Game>(
