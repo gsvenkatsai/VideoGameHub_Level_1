@@ -8,6 +8,7 @@ import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelecter from "./components/PlatformSelecter";
 import type { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -27,13 +28,18 @@ const App = () => {
         />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">
-        <PlatformSelecter
-          selectedPlatform={gameQuery.platform}
-          onSelectPlatform={(platform) =>
-            setGameQuery({ ...gameQuery, platform })
-          }
-        />
-        <GameGrid gameQuery={gameQuery} />
+        <div className="space-y-6">
+          <div className="flex gap-10">
+            <PlatformSelecter
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <SortSelector />
+          </div>
+          <GameGrid gameQuery={gameQuery} />
+        </div>
       </main>
     </div>
   );
