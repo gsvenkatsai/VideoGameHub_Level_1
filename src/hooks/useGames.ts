@@ -1,6 +1,5 @@
 import type { GameQuery } from "../App";
-import useData from "./useData";
-import type { Genre } from "./useGenres";
+import useData from "./useData";  
 
 //interfaces are created to create a object with particular attribute
 export interface Platform{
@@ -19,7 +18,8 @@ const useGames =(gameQuery:GameQuery) => useData<Game>(
     '/games',{
       params:{
         genres:gameQuery.genre?.id, 
-        platforms:gameQuery.platform?.id
+        platforms:gameQuery.platform?.id,
+        ordering:gameQuery.sortOrder
         }
       }, 
       [gameQuery]

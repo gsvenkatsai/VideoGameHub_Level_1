@@ -1,6 +1,5 @@
 import type { GameQuery } from "../App";
-import useGames, { type Platform } from "../hooks/useGames";
-import type { Genre } from "../hooks/useGenres";
+import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
