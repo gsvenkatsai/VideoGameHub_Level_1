@@ -14,6 +14,15 @@ export interface Game {
   metacritic: number;
   parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
-const useGames=(selectedGenre:Genre|null)=> useData<Game>('/games',{params:{genres:selectedGenre?.id}}, [selectedGenre?.id]);
+const useGames =( 
+  selectedGenre:Genre | null,selectedPlatform:Platform | null) => useData<Game>(
+    '/games',{
+      params:{
+        genres:selectedGenre?.id, 
+        platforms:selectedPlatform?.id
+        }
+      }, 
+      [selectedGenre?.id,selectedPlatform?.id]
+    );
 
 export default useGames;
