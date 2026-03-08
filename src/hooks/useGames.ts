@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import type { GameQuery } from "../App";
 import APIClient, { type FetchResponse } from "../services/api-client";  
 import type { Platform } from "./usePlatforms";
@@ -14,17 +14,21 @@ export interface Game {
   parent_platforms:{ platform:Platform}[] // coz in the backend design we have a array of objects of Platform in parent_platform
 }
 const useGames =(gameQuery:GameQuery) => 
-  useQuery<FetchResponse<Game>,Error>({
+  useInfiniteQuery<FetchResponse<Game>,Error>({
     queryKey:['games',gameQuery],
-    queryFn:()=>
+    queryFn:({pageParam=1})=>
       apiClient.getAll({ //to pass query string object we need to pass them as config objects
         params:{
         genres:gameQuery.genre?.id, 
         parent_platforms:gameQuery.platform?.id,
         ordering:gameQuery.sortOrder,
-        search:gameQuery.searchText
+        search:gameQuery.searchText,
+        page:pageParam
         }
-      })
+      }),
+      getNextPageParam:(lastPage,allPages) =>{
+        return  lastPage.next ? allPages.length+1 : undefined;
+      }
   });
 
 export default useGames;

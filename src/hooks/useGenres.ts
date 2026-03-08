@@ -1,7 +1,6 @@
 // import useData from "./useData";
 import { useQuery } from '@tanstack/react-query';
 import APIClient from '../services/api-client';
-import { type FetchResponse } from "../services/api-client";
 import genres from '../Data/genres';
 
 const apiClient = new APIClient<Genre>('/genres');
@@ -11,7 +10,7 @@ export interface Genre{
   image_background :string;
 }
 // const useGenres = () => useData<Genre>('/genres');
-const useGenres =() => useQuery({
+const useGenres =() => useQuery<{count: number; results: Genre[]}, Error>({
   queryKey:['genres'],
   //we defined a serperate axios with base url and api key in apiClient.ts
   //we use useGenres in GenreList, it expects data but this api give data object inside count and results so we need to mention the type for get request
