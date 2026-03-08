@@ -2,13 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import type { GameQuery } from "../App";
 import apiClient from "../services/api-client";
 import { type FetchResponse } from "../services/api-client";  
+import type { Platform } from "./usePlatforms";
 
-//interfaces are created to create a object with particular attribute
-export interface Platform{
-  id:number;
-  name:string;
-  slug:string;
-}
 export interface Game {
   id: number;
   name: string;
