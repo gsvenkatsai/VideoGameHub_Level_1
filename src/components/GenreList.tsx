@@ -12,7 +12,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
     );
   return (
     <ul className="space-y-2">
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <li
           key={genre.id}
           className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-700 hover:text-white cursor-pointer transition"
