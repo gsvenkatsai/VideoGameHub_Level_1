@@ -1,19 +1,15 @@
 import "./index.css";
-
 import { useState } from "react";
-import type { Genre } from "./hooks/useGenres";
-
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelecter from "./components/PlatformSelecter";
-import type { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genreId?: number;
-  platform: Platform | null;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }
@@ -31,7 +27,7 @@ const App = () => {
           selectedGenreId={gameQuery.genreId}
           onSelectGenre={(genre) =>
             setGameQuery({ ...gameQuery, genreId: genre.id })
-          }
+          } //genreId: genre.id we are assigning the id of genre which we got by clicking to genreId
         />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">
@@ -39,9 +35,9 @@ const App = () => {
         <div className="space-y-6">
           <div className="flex gap-10">
             <PlatformSelecter
-              selectedPlatform={gameQuery.platform}
+              selectedPlatformId={gameQuery.platformId}
               onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
+                setGameQuery({ ...gameQuery, platformId: platform.id })
               }
             />
             <SortSelector
