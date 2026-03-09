@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
-
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     if (darkMode) {
@@ -22,7 +18,7 @@ const NavBar = ({ onSearch }: Props) => {
         <div className="text-lg font-semibold">Video Game Hub</div>
       </div>
       <div className="flex gap-4">
-        <SearchInput onSearch={onSearch} />
+        <SearchInput />
         <button
           onClick={() => {
             console.log("clicked");
