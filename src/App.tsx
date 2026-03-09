@@ -12,7 +12,7 @@ import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-  genre: Genre | null;
+  genreId?: number;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
@@ -28,8 +28,10 @@ const App = () => {
       </nav>
       <aside className="bg-gray-200 dark:bg-black dark:text-white p-4 hidden min-[450px]:block">
         <GenreList
-          selectedGenre={gameQuery.genre}
-          onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+          selectedGenreId={gameQuery.genreId}
+          onSelectGenre={(genre) =>
+            setGameQuery({ ...gameQuery, genreId: genre.id })
+          }
         />
       </aside>
       <main className="bg-white p-4 dark:bg-gray-800 dark:text-white">

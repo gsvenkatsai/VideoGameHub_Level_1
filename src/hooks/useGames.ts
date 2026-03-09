@@ -19,7 +19,7 @@ const useGames =(gameQuery:GameQuery) =>
     queryFn:({pageParam=1})=>
       apiClient.getAll({ //to pass query string object we need to pass them as config objects
         params:{
-        genres:gameQuery.genre?.id, 
+        genres:gameQuery.genreId, 
         parent_platforms:gameQuery.platform?.id,
         ordering:gameQuery.sortOrder,
         search:gameQuery.searchText,
