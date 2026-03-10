@@ -1,4 +1,5 @@
 // Import ONLY the type (removed at compile time, no JS output)
+import { Link } from "react-router-dom";
 import type { Game } from "../hooks/useGames";
 // import getCroppedImageURL from "../services/image-url";
 // Generic reusable Card wrapper component
@@ -45,7 +46,7 @@ const GameCard = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </div>
         <h2 className="text-lg font-semibold">
-          {game.name}
+          <Link to={"/games/" + game.slug}>{game.name}</Link>
           <Emoji rating={game.rating_top} />
         </h2>
       </div>
