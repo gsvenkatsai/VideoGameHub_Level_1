@@ -1,6 +1,6 @@
 // Import ONLY the type (removed at compile time, no JS output)
 import { Link } from "react-router-dom";
-import type { Game } from "../hooks/useGames";
+import type { Game } from "../entities/Game";
 // import getCroppedImageURL from "../services/image-url";
 // Generic reusable Card wrapper component
 import Card from "./Card";
