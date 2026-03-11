@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -12,7 +13,10 @@ const NavBar = () => {
   return (
     <nav className="flex items-center justify-between w-full p-4">
       <div className="flex items-center gap-3">
-        <img src={logo} alt="logo" className="w-16 h-16" />
+        <Link to="/">
+          <img src={logo} alt="logo" className="w-16 h-16" />
+        </Link>
+
         <span className="text-lg font-semibold text-zinc-100">
           Video Game Hub
         </span>
