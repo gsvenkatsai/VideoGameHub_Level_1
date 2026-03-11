@@ -6,5 +6,6 @@ html {
 }
 
 html.dark {
-  background-color: #1f2937; /* same as bg-gray-800 */
+  background-color: black
+  ; /* same as bg-gray-800 */
 }

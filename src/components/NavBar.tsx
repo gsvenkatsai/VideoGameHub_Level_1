@@ -4,27 +4,24 @@ import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
+
   return (
-    <nav className="flex items-center justify-between w-full p-4 col-span-2">
+    <nav className="flex items-center justify-between w-full p-4">
       <div className="flex items-center gap-3">
         <img src={logo} alt="logo" className="w-16 h-16" />
-        <div className="text-lg font-semibold">Video Game Hub</div>
+        <span className="text-lg font-semibold text-zinc-100">
+          Video Game Hub
+        </span>
       </div>
       <div className="flex gap-4">
         <SearchInput />
         <button
-          onClick={() => {
-            console.log("clicked");
-            setDarkMode((prev) => !prev);
-          }}
-          className="px-4 py-2 bg-gray-200 text-black dark:bg-gray-300 dark:text-black rounded"
+          onClick={() => setDarkMode((prev) => !prev)}
+          className="px-4 py-2 rounded bg-zinc-700 text-zinc-100 hover:bg-zinc-600 transition-colors"
         >
           Toggle Theme
         </button>
@@ -32,5 +29,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;
