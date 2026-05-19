@@ -3,8 +3,8 @@ import APIClient from "../services/api-client";
 import type { Game } from "../entities//Game";
 
 const apiClient = new APIClient<Game>('/games'); 
-const useGame = (slug:string) => useQuery({
-    queryKey:['games',slug],
-    queryFn:()=>apiClient.get(slug)
+const useGame = (id: string) => useQuery({
+    queryKey: ['games', id],
+    queryFn: () => apiClient.get(id)
 })
 export default useGame;

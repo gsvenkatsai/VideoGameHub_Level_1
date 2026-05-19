@@ -6,13 +6,16 @@ import "./index.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes.tsx";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </ChakraProvider>

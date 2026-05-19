@@ -10,6 +10,7 @@ export interface Game {
   publishers:Publisher[];
   genres:Genre[];
   description_raw: string;
+  released: string;
   background_image: string;
   metacritic: number;
   rating_top: number;
