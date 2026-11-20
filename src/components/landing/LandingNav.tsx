@@ -3,7 +3,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { SiSteam, SiPlaystation, SiXbox, SiNintendoswitch } from "react-icons/si";
 import { FiClock } from "react-icons/fi";
 import { useTheme } from "../../context/ThemeContext";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 
 interface LandingNavProps {
   onSkipToGames: () => void;
@@ -31,24 +31,26 @@ const LandingNav = ({ onSkipToGames }: LandingNavProps) => {
   }, []);
 
   return (
-    <header className="relative z-40 w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
+    <header className="relative z-40 w-full max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
       {/* Brand Logo & Tagline */}
       <div className="flex items-center gap-3.5">
         <div className="relative group cursor-pointer" onClick={onSkipToGames}>
-          <img
-            src={logo}
-            alt="Clutch It Mascot"
-            className="w-10 h-10 rounded-xl object-contain shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform"
-          />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 border-2 border-[#05070D] animate-ping" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 border-2 border-[#05070D]" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-violet-500/20 p-1 border border-cyan-500/40 shadow-md shadow-cyan-500/20 group-hover:scale-105 group-hover:border-cyan-400 transition-all flex items-center justify-center">
+            <img
+              src={logo}
+              alt="CLUTCH IT Mark"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping" />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-500 border-2 border-white dark:border-[#05070D]" />
         </div>
 
         <div className="flex flex-col">
-          <span className="text-sm sm:text-base font-black tracking-widest uppercase text-zinc-900 dark:text-white font-mono flex items-center gap-1.5 transition-colors">
-            CLUTCH IT <span className="text-cyan-500 dark:text-cyan-400 text-xs">//</span> ARCHIVE
+          <span className="text-sm sm:text-base font-black tracking-widest uppercase text-zinc-950 dark:text-white font-mono flex items-center gap-1.5 transition-colors">
+            CLUTCH IT <span className="text-cyan-600 dark:text-cyan-400 text-xs">//</span> ARCHIVE
           </span>
-          <span className="text-[10px] font-mono tracking-wider text-zinc-500 dark:text-[#A1A8B8] uppercase transition-colors">
+          <span className="text-[10px] font-mono tracking-wider text-zinc-600 dark:text-[#A1A8B8] font-semibold uppercase transition-colors">
             Next-Gen Game Discovery
           </span>
         </div>
@@ -57,24 +59,24 @@ const LandingNav = ({ onSkipToGames }: LandingNavProps) => {
       {/* Quick Telemetry, Theme Toggle & Skip To Games */}
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Real Live Time Pill */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-[#0B0F1A] border border-zinc-200 dark:border-white/10 text-[10px] font-mono text-zinc-600 dark:text-zinc-400 transition-colors">
-          <FiClock className="text-cyan-500 dark:text-cyan-400 text-xs" />
+        <div className="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0B0F1A] border border-slate-300 dark:border-white/10 text-[10px] font-mono text-zinc-700 dark:text-zinc-400 font-semibold shadow-sm transition-colors">
+          <FiClock className="text-cyan-600 dark:text-cyan-400 text-xs" />
           <span>{liveTime || "00:00:00"} UTC</span>
         </div>
 
         {/* Platform Quick Badges */}
-        <div className="hidden lg:flex items-center gap-3 text-zinc-400 dark:text-zinc-500 text-sm border-r border-zinc-200 dark:border-white/10 pr-4">
-          <SiSteam className="hover:text-zinc-900 dark:hover:text-white transition-colors" title="Steam" />
-          <SiPlaystation className="hover:text-zinc-900 dark:hover:text-white transition-colors" title="PlayStation" />
-          <SiXbox className="hover:text-zinc-900 dark:hover:text-white transition-colors" title="Xbox" />
-          <SiNintendoswitch className="hover:text-zinc-900 dark:hover:text-white transition-colors" title="Nintendo" />
+        <div className="hidden lg:flex items-center gap-3 text-zinc-500 dark:text-zinc-400 text-sm border-r border-slate-300 dark:border-white/10 pr-4">
+          <SiSteam className="hover:text-zinc-950 dark:hover:text-white transition-colors" title="Steam" />
+          <SiPlaystation className="hover:text-zinc-950 dark:hover:text-white transition-colors" title="PlayStation" />
+          <SiXbox className="hover:text-zinc-950 dark:hover:text-white transition-colors" title="Xbox" />
+          <SiNintendoswitch className="hover:text-zinc-950 dark:hover:text-white transition-colors" title="Nintendo" />
         </div>
 
         {/* Theme Toggle Button */}
         <button
           onClick={toggle}
           aria-label="Toggle light and dark mode"
-          className="relative h-9 px-3 flex items-center gap-2 rounded-xl bg-zinc-100 hover:bg-zinc-200/80 border border-zinc-200 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] dark:border-white/10 text-zinc-700 dark:text-zinc-300 transition-all duration-200 group cursor-pointer shadow-sm"
+          className="relative h-9 px-3 flex items-center gap-2 rounded-xl bg-white hover:bg-slate-100 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] border border-slate-300 dark:border-white/10 text-zinc-800 dark:text-zinc-300 transition-all duration-200 group cursor-pointer shadow-sm"
         >
           <div className="relative w-4 h-4 flex items-center justify-center">
             {/* Sun Icon */}
@@ -118,7 +120,7 @@ const LandingNav = ({ onSkipToGames }: LandingNavProps) => {
             </svg>
           </div>
 
-          <span className="hidden sm:inline font-mono text-[11px] font-bold text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors uppercase">
+          <span className="hidden sm:inline font-mono text-[11px] font-bold text-zinc-700 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors uppercase">
             {isDark ? "Dark" : "Light"}
           </span>
         </button>
@@ -126,10 +128,10 @@ const LandingNav = ({ onSkipToGames }: LandingNavProps) => {
         {/* REQUIRED: SKIP TO GAMES link in nav only */}
         <button
           onClick={onSkipToGames}
-          className="group flex items-center gap-2 text-xs font-mono tracking-wider uppercase px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200/80 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] border border-zinc-200 dark:border-white/10 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 text-zinc-800 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-all duration-200 cursor-pointer shadow-sm"
+          className="group flex items-center gap-2 text-xs font-mono tracking-wider uppercase px-4 py-2 rounded-xl bg-white hover:bg-slate-100 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] border border-slate-300 dark:border-white/10 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 text-zinc-900 dark:text-zinc-300 hover:text-cyan-700 dark:hover:text-white transition-all duration-200 cursor-pointer shadow-sm font-bold"
         >
           <span>Skip to Games</span>
-          <BsArrowRight className="group-hover:translate-x-1 text-cyan-500 dark:text-cyan-400 transition-transform" />
+          <BsArrowRight className="group-hover:translate-x-1 text-cyan-600 dark:text-cyan-400 transition-transform" />
         </button>
       </div>
     </header>

@@ -36,7 +36,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
   };
 
   return (
-    <section className="relative min-h-[92vh] w-full flex flex-col justify-center items-center px-4 sm:px-6 pt-12 pb-20 overflow-hidden bg-[#F8F9FA] dark:bg-[#05070D] transition-colors duration-200">
+    <section className="relative min-h-[90vh] w-full flex flex-col justify-center items-center px-4 sm:px-6 pt-10 pb-20 overflow-hidden bg-[#EFF2F6] dark:bg-[#05070D] transition-colors duration-200">
       {/* Film Grain & Scanlines Overlay (Hero only, 3-4% opacity) */}
       <div
         className="pointer-events-none absolute inset-0 z-20 opacity-[0.025] dark:opacity-[0.035] mix-blend-overlay"
@@ -63,7 +63,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="block text-zinc-900 dark:text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
+            className="block text-zinc-950 dark:text-white drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
           >
             EVERY GAME.
           </motion.span>
@@ -72,7 +72,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.12 }}
-            className="block text-zinc-900 dark:text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
+            className="block text-zinc-950 dark:text-white drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
           >
             EVERY PLATFORM.
           </motion.span>
@@ -84,7 +84,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
             className="block"
           >
             <span
-              className="bg-gradient-to-r from-[#0284C7] via-[#6366F1] to-[#A855F7] dark:from-[#38BDF8] dark:via-[#818CF8] dark:to-[#C084FC] bg-clip-text text-transparent inline-block"
+              className="bg-gradient-to-r from-[#0284C7] via-[#4F46E5] to-[#9333EA] dark:from-[#38BDF8] dark:via-[#818CF8] dark:to-[#C084FC] bg-clip-text text-transparent inline-block font-black"
               style={{
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -95,12 +95,12 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
           </motion.span>
         </h1>
 
-        {/* High-Contrast Body Copy (WCAG AA compliant) */}
+        {/* High-Contrast Body Copy (WCAG AAA compliant: text-zinc-700 on light, text-[#A1A8B8] on dark) */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 text-base sm:text-lg text-zinc-600 dark:text-[#A1A8B8] max-w-2xl font-normal leading-relaxed transition-colors"
+          className="mt-6 text-base sm:text-lg text-zinc-700 dark:text-[#A1A8B8] max-w-2xl font-medium leading-relaxed transition-colors"
         >
           Precision game discovery powered by the RAWG API. Search 500K+ releases, isolate platforms, examine Metacritic evidence, and find your next obsession.
         </motion.p>
@@ -131,8 +131,8 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
           />
 
           {/* Active Platform Status Telemetry readout */}
-          <div className="mt-3 font-mono text-[11px] tracking-widest uppercase text-cyan-600 dark:text-cyan-400 font-bold flex items-center justify-center gap-2 transition-colors">
-            <FiLayers className="text-zinc-400 dark:text-zinc-500 text-xs" />
+          <div className="mt-3 font-mono text-[11px] tracking-widest uppercase text-cyan-800 dark:text-cyan-400 font-extrabold flex items-center justify-center gap-2 transition-colors">
+            <FiLayers className="text-zinc-500 dark:text-zinc-400 text-xs" />
             <span>{hudPlatformReadout}</span>
           </div>
         </motion.div>
@@ -155,7 +155,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
               y: magneticOffset.y,
             }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#22D3EE] via-[#60A5FA] to-[#C77DFF] text-[#05070D] font-mono font-bold text-xs tracking-widest uppercase shadow-[0_4px_20px_rgba(34,211,238,0.35)] dark:shadow-[0_0_30px_rgba(34,211,238,0.4),0_10px_25px_rgba(0,0,0,0.6)] hover:shadow-[0_6px_28px_rgba(34,211,238,0.5)] dark:hover:shadow-[0_0_45px_rgba(34,211,238,0.65),0_12px_30px_rgba(0,0,0,0.8)] transition-shadow duration-300 active:scale-[0.98] cursor-pointer"
+            className="group relative w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#22D3EE] via-[#60A5FA] to-[#C77DFF] text-[#05070D] font-mono font-black text-xs tracking-widest uppercase shadow-[0_4px_20px_rgba(34,211,238,0.35)] dark:shadow-[0_0_30px_rgba(34,211,238,0.4),0_10px_25px_rgba(0,0,0,0.6)] hover:shadow-[0_6px_28px_rgba(34,211,238,0.5)] dark:hover:shadow-[0_0_45px_rgba(34,211,238,0.65),0_12px_30px_rgba(0,0,0,0.8)] transition-shadow duration-300 active:scale-[0.98] cursor-pointer"
           >
             <div className="w-6 h-6 rounded-lg bg-black/20 flex items-center justify-center text-[#05070D]">
               <IoGameController className="text-sm" />
@@ -167,7 +167,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
           {/* SECONDARY CTA: GHOST OUTLINE */}
           <button
             onClick={onBrowseGenres}
-            className="w-full sm:w-auto flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-white/90 hover:bg-zinc-100 dark:bg-transparent dark:hover:bg-white/[0.04] border border-zinc-300 dark:border-white/20 hover:border-violet-400 dark:hover:border-[#C77DFF]/60 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white font-mono font-semibold text-xs tracking-widest uppercase backdrop-blur-sm transition-all duration-300 shadow-sm active:scale-[0.98] cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-white hover:bg-slate-100 dark:bg-transparent dark:hover:bg-white/[0.04] border border-slate-300 dark:border-white/20 hover:border-violet-500 dark:hover:border-[#C77DFF]/60 text-zinc-900 dark:text-zinc-300 hover:text-black dark:hover:text-white font-mono font-bold text-xs tracking-widest uppercase backdrop-blur-sm transition-all duration-300 shadow-sm active:scale-[0.98] cursor-pointer"
           >
             <span className="text-violet-600 dark:text-[#C77DFF]">◈</span>
             <span>BROWSE GENRES</span>

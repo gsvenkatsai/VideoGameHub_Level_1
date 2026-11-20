@@ -51,7 +51,7 @@ const BentoCard = ({
         transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: "transform 0.25s ease-out",
       }}
-      className={`relative rounded-2xl sm:rounded-[20px] bg-white dark:bg-[#0B0F1A] border border-zinc-200 dark:border-white/[0.07] overflow-hidden p-6 sm:p-7 shadow-lg dark:shadow-xl group transition-colors duration-200 ${className}`}
+      className={`relative rounded-2xl sm:rounded-[20px] bg-white dark:bg-[#0B0F1A] border border-slate-200/90 dark:border-white/[0.07] overflow-hidden p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-xl group transition-colors duration-200 ${className}`}
     >
       {/* Cursor-tracking spotlight border highlight */}
       <div
@@ -117,14 +117,14 @@ const BentoGrid = () => {
     <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 py-16">
       {/* Header */}
       <div className="mb-10 text-center sm:text-left">
-        <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-600 dark:text-cyan-400 font-bold flex items-center justify-center sm:justify-start gap-2 mb-2 transition-colors">
-          <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+        <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-700 dark:text-cyan-400 font-extrabold flex items-center justify-center sm:justify-start gap-2 mb-2 transition-colors">
+          <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400 animate-pulse" />
           SECTION 03 // ARCHIVE CAPABILITIES
         </div>
-        <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-900 dark:text-white transition-colors">
+        <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
           Engineered for Deep Discovery
         </h2>
-        <p className="text-sm text-zinc-600 dark:text-[#A1A8B8] mt-2 max-w-xl transition-colors">
+        <p className="text-sm text-zinc-700 dark:text-[#A1A8B8] font-medium mt-2 max-w-xl transition-colors">
           Everything you need to bypass marketing fluff and zero in on authentic gaming greatness.
         </p>
       </div>
@@ -135,27 +135,27 @@ const BentoGrid = () => {
         <BentoCard className="md:col-span-7 min-h-[300px]">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-800 dark:text-cyan-400 border border-cyan-500/25 font-bold">
                 DATASET SCALE
               </span>
-              <span className="font-mono text-xs text-zinc-500">SYNCHRONIZED DAILY</span>
+              <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 font-semibold">SYNCHRONIZED DAILY</span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-900 dark:text-white transition-colors">
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
               Vast Library: 500,000+ Titles
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-[#A1A8B8] mt-2 leading-relaxed max-w-md transition-colors">
+            <p className="text-xs sm:text-sm text-zinc-700 dark:text-[#A1A8B8] font-medium mt-2 leading-relaxed max-w-md transition-colors">
               From historic 8-bit classics to day-one ray-traced blockbusters. Instant offline fallback backed by 20+ verified benchmarks.
             </p>
           </div>
 
           {/* Mini Marquee of Covers */}
-          <div className="relative mt-6 overflow-hidden rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-black/40 p-2">
+          <div className="relative mt-6 overflow-hidden rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-black/40 p-2">
             <div className="flex gap-2.5 animate-[marquee_20s_linear_infinite] whitespace-nowrap">
               {LOCAL_GAMES.slice(0, 10).map((game) => (
                 <div
                   key={game.id}
-                  className="w-20 sm:w-24 h-28 rounded-lg overflow-hidden flex-shrink-0 border border-zinc-200 dark:border-white/10 relative shadow-sm"
+                  className="w-20 sm:w-24 h-28 rounded-lg overflow-hidden flex-shrink-0 border border-slate-200 dark:border-white/10 relative shadow-sm"
                 >
                   <GameCoverImage
                     src={getCroppedImageURL(game.background_image)}
@@ -177,16 +177,16 @@ const BentoGrid = () => {
         <BentoCard className="md:col-span-5 min-h-[300px]">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20 font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-violet-500/10 text-violet-800 dark:text-violet-400 border border-violet-500/25 font-bold">
                 ECOSYSTEM
               </span>
-              <span className="font-mono text-xs text-zinc-500">6 CORE PLATFORMS</span>
+              <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 font-semibold">6 CORE PLATFORMS</span>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-black tracking-tight text-zinc-900 dark:text-white transition-colors">
+            <h3 className="text-xl sm:text-2xl font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
               Unified Across Every Machine
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-[#A1A8B8] mt-1.5 leading-relaxed transition-colors">
+            <p className="text-xs text-zinc-700 dark:text-[#A1A8B8] font-medium mt-1.5 leading-relaxed transition-colors">
               Real platform icons. Seamless switching between PC, consoles, and handhelds.
             </p>
           </div>
@@ -194,7 +194,7 @@ const BentoGrid = () => {
           {/* Orbiting / Rotating Platform Cluster */}
           <div className="relative h-40 my-3 flex items-center justify-center">
             {/* Center Hub */}
-            <div className="w-12 h-12 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 border border-cyan-500 dark:border-cyan-400 flex items-center justify-center text-cyan-600 dark:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.3)] z-10">
+            <div className="w-12 h-12 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 border border-cyan-500 dark:border-cyan-400 flex items-center justify-center text-cyan-800 dark:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.3)] z-10 font-bold">
               <span className="font-mono text-[10px] font-bold">ALL</span>
             </div>
 
@@ -223,7 +223,7 @@ const BentoGrid = () => {
                     style={{
                       transform: `translate(${x}px, ${y}px)`,
                     }}
-                    className="absolute w-9 h-9 rounded-xl bg-zinc-100 dark:bg-[#111726] border border-zinc-200 dark:border-white/15 hover:border-cyan-500 dark:hover:border-cyan-400 text-zinc-700 dark:text-zinc-300 hover:text-cyan-600 dark:hover:text-white flex items-center justify-center shadow-md transition-transform hover:scale-125 cursor-pointer"
+                    className="absolute w-9 h-9 rounded-xl bg-white dark:bg-[#111726] border border-slate-300 dark:border-white/15 hover:border-cyan-600 dark:hover:border-cyan-400 text-zinc-800 dark:text-zinc-300 hover:text-cyan-700 dark:hover:text-white flex items-center justify-center shadow-md transition-transform hover:scale-125 cursor-pointer"
                   >
                     <IconComponent className="text-sm" />
                   </button>
@@ -237,36 +237,36 @@ const BentoGrid = () => {
         <BentoCard className="md:col-span-4 min-h-[260px]">
           <div ref={metaRef}>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-800 dark:text-emerald-400 border border-emerald-500/25 font-bold">
                 CRITIC RIGOR
               </span>
-              <span className="font-mono text-[10px] text-zinc-500">RAWG INGESTED</span>
+              <span className="font-mono text-[10px] text-zinc-500 font-semibold">RAWG INGESTED</span>
             </div>
 
-            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-900 dark:text-white transition-colors">
+            <h3 className="text-lg sm:text-xl font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
               Metacritic Verified
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-[#A1A8B8] mt-1 transition-colors">
+            <p className="text-xs text-zinc-700 dark:text-[#A1A8B8] font-medium mt-1 transition-colors">
               Honest critic consensus. Scores ingested directly from Metacritic via RAWG API.
             </p>
 
             {/* 3 Sample Badges with count-up animation */}
             <div className="mt-5 space-y-2">
-              <div className="flex items-center justify-between p-2 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
-                <span className="text-xs font-mono text-zinc-700 dark:text-zinc-300">RDR2 (Universal Acclaim)</span>
-                <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 tabular-nums">
+              <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+                <span className="text-xs font-mono font-medium text-zinc-800 dark:text-zinc-300">RDR2 (Universal Acclaim)</span>
+                <span className="px-2 py-0.5 rounded text-xs font-mono font-black bg-emerald-500/15 border border-emerald-500/40 text-emerald-700 dark:text-emerald-400 tabular-nums">
                   {metaCounts.high}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
-                <span className="text-xs font-mono text-zinc-700 dark:text-zinc-300">Mixed Reception</span>
-                <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-yellow-500/15 border border-yellow-500/40 text-yellow-600 dark:text-yellow-400 tabular-nums">
+              <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+                <span className="text-xs font-mono font-medium text-zinc-800 dark:text-zinc-300">Mixed Reception</span>
+                <span className="px-2 py-0.5 rounded text-xs font-mono font-black bg-yellow-500/15 border border-yellow-500/40 text-yellow-700 dark:text-yellow-400 tabular-nums">
                   {metaCounts.med}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
-                <span className="text-xs font-mono text-zinc-700 dark:text-zinc-300">Unfavorable Score</span>
-                <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-rose-500/15 border border-rose-500/40 text-rose-600 dark:text-rose-400 tabular-nums">
+              <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
+                <span className="text-xs font-mono font-medium text-zinc-800 dark:text-zinc-300">Unfavorable Score</span>
+                <span className="px-2 py-0.5 rounded text-xs font-mono font-black bg-rose-500/15 border border-rose-500/40 text-rose-700 dark:text-rose-400 tabular-nums">
                   {metaCounts.low}
                 </span>
               </div>
@@ -279,16 +279,16 @@ const BentoGrid = () => {
           <div>
             <div className="flex items-center justify-between mb-3">
               {/* Signature Amber Badge */}
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-[#FFB020]/15 text-amber-600 dark:text-[#FFB020] border border-[#FFB020]/40 font-bold shadow-[0_0_12px_rgba(255,176,32,0.2)]">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-[#FFB020]/20 text-amber-800 dark:text-[#FFB020] border border-[#FFB020]/50 font-black shadow-[0_0_12px_rgba(255,176,32,0.2)]">
                 <FiTrendingUp className="text-xs" /> HOT // TRENDING NOW
               </span>
-              <span className="font-mono text-[10px] text-zinc-500">LIVE CYCLES</span>
+              <span className="font-mono text-[10px] text-zinc-500 font-semibold">LIVE CYCLES</span>
             </div>
 
-            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-900 dark:text-white transition-colors">
+            <h3 className="text-lg sm:text-xl font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
               Community Velocity
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-[#A1A8B8] mt-1 transition-colors">
+            <p className="text-xs text-zinc-700 dark:text-[#A1A8B8] font-medium mt-1 transition-colors">
               Top titles gaining traction across all archives this week.
             </p>
 
@@ -300,7 +300,7 @@ const BentoGrid = () => {
                   onClick={() => navigate(`/game/${item.id}`)}
                   className="group/item flex flex-col text-left transition-transform hover:-translate-y-1 cursor-pointer"
                 >
-                  <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-zinc-200 dark:border-white/10 group-hover/item:border-[#FFB020]/50 transition-colors shadow-sm">
+                  <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-slate-300 dark:border-white/10 group-hover/item:border-[#FFB020]/60 transition-colors shadow-sm">
                     <GameCoverImage
                       src={getCroppedImageURL(item.background_image)}
                       alt={item.name}
@@ -308,11 +308,11 @@ const BentoGrid = () => {
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
-                    <span className="absolute top-1 right-1 px-1 py-0.2 rounded bg-black/80 font-mono text-[9px] text-emerald-400 font-bold">
+                    <span className="absolute top-1 right-1 px-1 py-0.2 rounded bg-black/85 font-mono text-[9px] text-emerald-400 font-bold">
                       {item.metacritic}
                     </span>
                   </div>
-                  <span className="mt-1 text-[10px] font-mono text-zinc-700 dark:text-zinc-300 truncate w-full group-hover/item:text-amber-600 dark:group-hover/item:text-[#FFB020] transition-colors">
+                  <span className="mt-1 text-[10px] font-mono font-bold text-zinc-800 dark:text-zinc-300 truncate w-full group-hover/item:text-amber-700 dark:group-hover/item:text-[#FFB020] transition-colors">
                     {item.name}
                   </span>
                 </button>
@@ -325,35 +325,35 @@ const BentoGrid = () => {
         <BentoCard className="md:col-span-3 min-h-[260px]">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 font-bold">
+              <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-800 dark:text-cyan-400 border border-cyan-500/25 font-bold">
                 SPEED
               </span>
-              <FiFilter className="text-cyan-500 dark:text-cyan-400 text-xs" />
+              <FiFilter className="text-cyan-700 dark:text-cyan-400 text-xs" />
             </div>
 
-            <h3 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white transition-colors">
+            <h3 className="text-lg font-black tracking-tight text-zinc-950 dark:text-white transition-colors">
               Filter in One Click
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-[#A1A8B8] mt-1 transition-colors">Zero page reload latency.</p>
+            <p className="text-xs text-zinc-700 dark:text-[#A1A8B8] font-medium mt-1 transition-colors">Zero page reload latency.</p>
 
             {/* Looping Mini Demo UI */}
-            <div className="mt-4 p-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-white/10 space-y-2">
-              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-600 dark:text-zinc-400">
+            <div className="mt-4 p-3 rounded-xl bg-slate-50 dark:bg-black/60 border border-slate-200 dark:border-white/10 space-y-2">
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-800 dark:text-zinc-400 font-bold">
                 <span>ACTIVE FILTER:</span>
-                <span className="text-cyan-600 dark:text-cyan-400 font-bold">
+                <span className="text-cyan-700 dark:text-cyan-400 font-black">
                   {filterOptions[simFilterIdx]}
                 </span>
               </div>
-              <div className="h-1.5 w-full bg-zinc-200 dark:bg-white/10 rounded-full overflow-hidden">
+              <div className="h-1.5 w-full bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
                 <motion.div
                   key={simFilterIdx}
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 2.3, ease: "linear" }}
-                  className="h-full bg-gradient-to-r from-cyan-400 to-violet-400"
+                  className="h-full bg-gradient-to-r from-cyan-500 to-violet-500"
                 />
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-600 dark:text-emerald-400 pt-1">
+              <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-700 dark:text-emerald-400 pt-1 font-bold">
                 <FiCheck className="text-xs" /> 0.04s QUERY APPLIED
               </div>
             </div>
@@ -363,7 +363,7 @@ const BentoGrid = () => {
                 setGenreId(4); // Action
                 navigate("/games");
               }}
-              className="mt-4 w-full py-2 text-center rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-white/5 dark:hover:bg-white/10 border border-zinc-200 dark:border-white/10 text-[10px] font-mono tracking-widest uppercase text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors cursor-pointer"
+              className="mt-4 w-full py-2 text-center rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-300 dark:border-white/10 text-[10px] font-mono tracking-widest uppercase text-zinc-900 hover:text-black dark:text-zinc-300 dark:hover:text-white transition-colors cursor-pointer font-bold"
             >
               LAUNCH WITH FILTERS →
             </button>

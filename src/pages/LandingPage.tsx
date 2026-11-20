@@ -26,12 +26,12 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-[#F8F9FA] dark:bg-[#05070D] text-zinc-900 dark:text-white overflow-x-hidden flex flex-col selection:bg-cyan-400 selection:text-black transition-colors duration-200">
+    <div className="relative min-h-screen w-full bg-[#EFF2F6] dark:bg-[#05070D] text-zinc-950 dark:text-white overflow-x-hidden flex flex-col selection:bg-cyan-500 selection:text-white transition-colors duration-200">
       
       {/* Global Atmospheric Lighting Flares (Contextual, max 2 active at once) */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-cyan-400/10 dark:from-[#22D3EE]/15 via-indigo-400/5 dark:via-[#818CF8]/10 to-transparent blur-[140px] rounded-full" />
-        <div className="absolute top-[45%] right-[-10%] w-[600px] h-[600px] bg-gradient-to-t from-violet-400/5 dark:from-[#C77DFF]/10 via-transparent to-transparent blur-[160px] rounded-full" />
+        <div className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-cyan-500/10 dark:from-[#22D3EE]/15 via-indigo-500/5 dark:via-[#818CF8]/10 to-transparent blur-[140px] rounded-full" />
+        <div className="absolute top-[45%] right-[-10%] w-[600px] h-[600px] bg-gradient-to-t from-violet-500/5 dark:from-[#C77DFF]/10 via-transparent to-transparent blur-[160px] rounded-full" />
 
         {/* Subtle Cyber Dotted Grid (Dark in light mode, white in dark mode) */}
         <div
@@ -87,13 +87,13 @@ const LandingPage = () => {
             animate={{ opacity: 1, scale: 1.15 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F8F9FA] dark:bg-[#05070D]"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#EFF2F6] dark:bg-[#05070D]"
           >
             <div className="relative">
               <div className="w-16 h-16 rounded-full border-2 border-cyan-500 dark:border-cyan-400 border-t-transparent animate-spin" />
-              <IoGameController className="absolute inset-0 m-auto text-xl text-cyan-500 dark:text-cyan-400" />
+              <IoGameController className="absolute inset-0 m-auto text-xl text-cyan-600 dark:text-cyan-400" />
             </div>
-            <p className="mt-6 font-mono text-xs tracking-widest uppercase text-cyan-600 dark:text-cyan-400 animate-pulse">
+            <p className="mt-6 font-mono text-xs tracking-widest uppercase text-cyan-700 dark:text-cyan-400 font-bold animate-pulse">
               {exitTarget === "/genres" ? "LOADING TAXONOMY ARCHIVE..." : "INITIALIZING RAWG GAME CATALOG..."}
             </p>
           </motion.div>

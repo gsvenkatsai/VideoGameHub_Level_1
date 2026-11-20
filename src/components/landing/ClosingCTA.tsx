@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { IoGameController } from "react-icons/io5";
 import { BsArrowRight } from "react-icons/bs";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 
 interface ClosingCTAProps {
   onExploreGames: () => void;
@@ -26,13 +26,13 @@ const ClosingCTA = ({ onExploreGames }: ClosingCTAProps) => {
   };
 
   return (
-    <section className="relative w-full py-28 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-zinc-100 via-white to-zinc-100 dark:from-[#05070D] dark:via-[#080B14] dark:to-[#05070D] border-t border-zinc-200 dark:border-white/[0.06] transition-colors duration-200">
+    <section className="relative w-full py-28 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-slate-200/80 via-slate-100 to-slate-200/80 dark:from-[#05070D] dark:via-[#080B14] dark:to-[#05070D] border-t border-slate-300 dark:border-white/[0.06] transition-colors duration-200">
       {/* Background Mascot Subtle Glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05] dark:opacity-[0.06] blur-[2px]">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06] dark:opacity-[0.08] blur-[1px]">
         <img
           src={logo}
-          alt="Clutch It Mascot"
-          className="w-[420px] h-[420px] object-contain filter drop-shadow-[0_0_80px_rgba(34,211,238,0.5)]"
+          alt="CLUTCH IT Mark"
+          className="w-[400px] h-[400px] object-contain filter drop-shadow-[0_0_80px_rgba(34,211,238,0.5)]"
         />
       </div>
 
@@ -41,16 +41,16 @@ const ClosingCTA = ({ onExploreGames }: ClosingCTAProps) => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
-        <div className="font-mono text-xs tracking-widest uppercase text-cyan-600 dark:text-cyan-400 font-bold mb-4 flex items-center gap-2 transition-colors">
-          <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+        <div className="font-mono text-xs tracking-widest uppercase text-cyan-700 dark:text-cyan-400 font-extrabold mb-4 flex items-center gap-2 transition-colors">
+          <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400 animate-pulse" />
           SYSTEM OPERATIONAL // LEVEL 1
         </div>
 
-        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-zinc-900 dark:text-white leading-none transition-colors">
-          READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-[#6366F1] to-[#A855F7] dark:from-[#22D3EE] dark:via-[#818CF8] dark:to-[#C77DFF]">CLUTCH?</span>
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-zinc-950 dark:text-white leading-none transition-colors">
+          READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-[#4F46E5] to-[#9333EA] dark:from-[#22D3EE] dark:via-[#818CF8] dark:to-[#C084FC]">CLUTCH?</span>
         </h2>
 
-        <p className="mt-5 text-sm sm:text-base text-zinc-600 dark:text-[#A1A8B8] max-w-xl font-normal leading-relaxed transition-colors">
+        <p className="mt-5 text-sm sm:text-base text-zinc-700 dark:text-[#A1A8B8] font-medium max-w-xl leading-relaxed transition-colors">
           Over 500,000 releases indexed and verified. Jump directly into the full catalogue with instant search, platform toggles, and Metacritic rankings.
         </p>
 
@@ -66,7 +66,7 @@ const ClosingCTA = ({ onExploreGames }: ClosingCTAProps) => {
               y: magneticOffset.y,
             }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="group relative flex items-center justify-center gap-4 px-10 py-5 rounded-xl bg-gradient-to-r from-[#22D3EE] via-[#60A5FA] to-[#C77DFF] text-[#05070D] font-mono font-bold text-sm tracking-widest uppercase shadow-[0_4px_25px_rgba(34,211,238,0.35)] dark:shadow-[0_0_40px_rgba(34,211,238,0.45)] hover:shadow-[0_6px_35px_rgba(34,211,238,0.55)] dark:hover:shadow-[0_0_60px_rgba(34,211,238,0.7)] transition-all duration-300 active:scale-[0.98] cursor-pointer"
+            className="group relative flex items-center justify-center gap-4 px-10 py-5 rounded-xl bg-gradient-to-r from-[#22D3EE] via-[#60A5FA] to-[#C77DFF] text-[#05070D] font-mono font-black text-sm tracking-widest uppercase shadow-[0_4px_25px_rgba(34,211,238,0.35)] dark:shadow-[0_0_40px_rgba(34,211,238,0.45)] hover:shadow-[0_6px_35px_rgba(34,211,238,0.55)] dark:hover:shadow-[0_0_60px_rgba(34,211,238,0.7)] transition-all duration-300 active:scale-[0.98] cursor-pointer"
           >
             <div className="w-7 h-7 rounded-lg bg-black/20 flex items-center justify-center text-[#05070D]">
               <IoGameController className="text-base" />
