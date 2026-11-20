@@ -29,12 +29,10 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
-      {/* Rotated Container (Subtle in light mode so text readability is 100% crisp) */}
+      {/* Rotated Container: Visible and animating in both Light and Dark mode */}
       <motion.div
         style={{ y: prefersReducedMotion ? 0 : parallaxY }}
-        className={`w-[140%] h-[150%] -left-[20%] -top-[25%] absolute flex justify-center gap-4 sm:gap-6 rotate-[-8deg] scale-110 sm:scale-125 transition-opacity duration-300 ${
-          isDark ? "opacity-100" : "opacity-35"
-        }`}
+        className="w-[140%] h-[150%] -left-[20%] -top-[25%] absolute flex justify-center gap-4 sm:gap-6 rotate-[-8deg] scale-110 sm:scale-125 opacity-90 transition-opacity duration-300"
       >
         {columns.map((column, colIdx) => {
           const isReverse = colIdx % 2 === 1;
@@ -74,7 +72,7 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
                     key={`${game.id}-${colIdx}-${itemIdx}`}
                     className={`relative rounded-xl overflow-hidden aspect-[3/4] bg-white dark:bg-[#0B0F1A] border border-slate-300 dark:border-white/10 shadow-lg dark:shadow-2xl transition-all duration-500 ${
                       isMatchingPlatform
-                        ? "opacity-90 scale-100 ring-1 ring-cyan-500/40 dark:ring-cyan-400/30"
+                        ? "opacity-95 scale-100 ring-1 ring-cyan-500/40 dark:ring-cyan-400/30"
                         : "opacity-25 grayscale scale-95"
                     }`}
                   >
@@ -97,13 +95,13 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
         })}
       </motion.div>
 
-      {/* Radial Vignette & Theme-Adaptive Veil so headline & CTAs stay 100% crisp and legible */}
+      {/* Radial Vignette & Theme-Adaptive Veil: Leaves animation visible while framing edges */}
       <div
-        className="absolute inset-0 z-10 transition-colors duration-500"
+        className="absolute inset-0 z-10 transition-colors duration-500 pointer-events-none"
         style={{
           background: isDark
-            ? `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(5,7,13,0.35) 0%, rgba(5,7,13,0.85) 65%, #05070D 100%)`
-            : `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(239,242,246,0.90) 0%, rgba(239,242,246,0.98) 65%, #EFF2F6 100%)`,
+            ? `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(5,7,13,0.3) 0%, rgba(5,7,13,0.85) 65%, #05070D 100%)`
+            : `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(239,242,246,0.35) 0%, rgba(239,242,246,0.85) 65%, #EFF2F6 100%)`,
         }}
       />
     </div>

@@ -51,19 +51,22 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
         }}
       />
 
-      {/* The Star: RAWG Cover Wall Background */}
+      {/* The Star: RAWG Cover Wall Background Animation */}
       <CoverWall selectedPlatformId={selectedPlatformId} />
 
       {/* Hero Content Container */}
       <div className="relative z-30 max-w-5xl mx-auto flex flex-col items-center text-center mt-6">
         
+        {/* Soft Ambient Frosted Backdrop behind Hero Content for maximum legibility while animations stream behind */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] max-w-4xl h-[460px] rounded-[48px] bg-white/70 dark:bg-black/30 backdrop-blur-sm pointer-events-none -z-10 shadow-[0_0_80px_rgba(255,255,255,0.8)] dark:shadow-none transition-all duration-300" />
+
         {/* Ultra-Heavy Sans Headline (reveals line-by-line, 70ms stagger) */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.92] max-w-4xl select-none">
           <motion.span
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="block text-zinc-950 dark:text-white drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
+            className="block text-zinc-950 dark:text-white drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
           >
             EVERY GAME.
           </motion.span>
@@ -72,7 +75,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.12 }}
-            className="block text-zinc-950 dark:text-white drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
+            className="block text-zinc-950 dark:text-white drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] dark:drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] transition-colors"
           >
             EVERY PLATFORM.
           </motion.span>
@@ -100,7 +103,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 text-base sm:text-lg text-zinc-700 dark:text-[#A1A8B8] max-w-2xl font-medium leading-relaxed transition-colors"
+          className="mt-6 text-base sm:text-lg text-zinc-800 dark:text-[#A1A8B8] max-w-2xl font-medium leading-relaxed transition-colors drop-shadow-[0_1px_4px_rgba(255,255,255,0.8)] dark:drop-shadow-none"
         >
           Precision game discovery powered by the RAWG API. Search 500K+ releases, isolate platforms, examine Metacritic evidence, and find your next obsession.
         </motion.p>
@@ -132,7 +135,7 @@ const Hero = ({ onExploreGames, onBrowseGenres }: HeroProps) => {
 
           {/* Active Platform Status Telemetry readout */}
           <div className="mt-3 font-mono text-[11px] tracking-widest uppercase text-cyan-800 dark:text-cyan-400 font-extrabold flex items-center justify-center gap-2 transition-colors">
-            <FiLayers className="text-zinc-500 dark:text-zinc-400 text-xs" />
+            <FiLayers className="text-zinc-600 dark:text-zinc-400 text-xs" />
             <span>{hudPlatformReadout}</span>
           </div>
         </motion.div>
