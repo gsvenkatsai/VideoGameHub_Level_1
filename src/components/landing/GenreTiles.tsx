@@ -18,18 +18,18 @@ const GenreTiles = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-400 font-bold flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+          <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-600 dark:text-cyan-400 font-bold flex items-center gap-2 mb-2 transition-colors">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400" />
             SECTION 04 // GENRE ARCHIVES
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-900 dark:text-white transition-colors">
             Explore by Atmosphere & Genre
           </h2>
         </div>
 
         <button
           onClick={() => navigate("/genres")}
-          className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer"
+          className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors group cursor-pointer font-bold"
         >
           <span>VIEW ALL 19 GENRES IN 3D RHOMBUS</span>
           <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -42,7 +42,7 @@ const GenreTiles = () => {
           <div
             key={genre.id}
             onClick={() => handleGenreClick(genre.id)}
-            className="group relative flex-shrink-0 w-52 sm:w-auto h-80 rounded-2xl bg-[#0B0F1A] border border-white/10 hover:border-cyan-400/60 overflow-hidden cursor-pointer snap-start transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(34,211,238,0.25)] flex flex-col justify-end p-4"
+            className="group relative flex-shrink-0 w-52 sm:w-auto h-80 rounded-2xl bg-zinc-900 dark:bg-[#0B0F1A] border border-zinc-200 dark:border-white/10 hover:border-cyan-500/60 dark:hover:border-cyan-400/60 overflow-hidden cursor-pointer snap-start transition-all duration-300 hover:-translate-y-2 shadow-md dark:shadow-xl hover:shadow-[0_12px_30px_rgba(34,211,238,0.25)] flex flex-col justify-end p-4"
           >
             {/* Background Cover Image with Duotone Filter */}
             <div className="absolute inset-0 z-0 overflow-hidden">
@@ -71,12 +71,12 @@ const GenreTiles = () => {
                 {genre.name}
               </h3>
 
-              <p className="text-[11px] text-zinc-400 line-clamp-1 group-hover:text-zinc-200 transition-colors">
+              <p className="text-[11px] text-zinc-300 line-clamp-1 group-hover:text-zinc-100 transition-colors">
                 {genre.tagline}
               </p>
 
               {/* Sliding Arrow on Hover */}
-              <div className="pt-2 flex items-center justify-between text-xs font-mono text-cyan-400 opacity-70 group-hover:opacity-100 transition-opacity">
+              <div className="pt-2 flex items-center justify-between text-xs font-mono text-cyan-300 opacity-80 group-hover:opacity-100 transition-opacity">
                 <span className="text-[10px] tracking-wider uppercase font-bold">
                   EXPLORE
                 </span>

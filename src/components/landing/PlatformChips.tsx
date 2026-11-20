@@ -48,13 +48,15 @@ const PlatformChips = ({ selectedPlatformId, onSelectPlatform }: PlatformChipsPr
             onClick={() => handleChipClick(chip)}
             className={`group relative flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-mono text-xs tracking-wider uppercase transition-all duration-200 cursor-pointer border ${
               isSelected
-                ? "bg-cyan-500/15 border-cyan-400 text-white shadow-[0_0_15px_rgba(34,211,238,0.25)] ring-1 ring-cyan-400/50"
-                : "bg-[#0B0F1A]/70 hover:bg-[#111726] border-white/10 hover:border-white/20 text-zinc-400 hover:text-zinc-200"
+                ? "bg-cyan-500/15 border-cyan-500 dark:border-cyan-400 text-cyan-900 dark:text-white shadow-[0_0_15px_rgba(34,211,238,0.25)] ring-1 ring-cyan-500/50 dark:ring-cyan-400/50 font-bold"
+                : "bg-white/90 hover:bg-zinc-100 dark:bg-[#0B0F1A]/70 dark:hover:bg-[#111726] border-zinc-200 dark:border-white/10 hover:border-zinc-300 dark:hover:border-white/20 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 shadow-sm"
             }`}
           >
             <span
               className={`transition-colors ${
-                isSelected ? "text-cyan-400" : "text-zinc-500 group-hover:text-zinc-300"
+                isSelected
+                  ? "text-cyan-600 dark:text-cyan-400"
+                  : "text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-300"
               }`}
             >
               {getIcon(chip.key)}
@@ -62,7 +64,7 @@ const PlatformChips = ({ selectedPlatformId, onSelectPlatform }: PlatformChipsPr
             <span className="font-semibold">{chip.name}</span>
 
             {isSelected && (
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse ml-0.5" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse ml-0.5" />
             )}
           </button>
         );

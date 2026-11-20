@@ -63,11 +63,11 @@ const Spotlight = () => {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-400 font-bold flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+          <div className="font-mono text-[11px] tracking-widest uppercase text-cyan-600 dark:text-cyan-400 font-bold flex items-center gap-2 mb-2 transition-colors">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-ping" />
             SECTION 02 // FEATURED SPOTLIGHT
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-zinc-900 dark:text-white transition-colors">
             Curator's Choice Archive
           </h2>
         </div>
@@ -80,7 +80,7 @@ const Spotlight = () => {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? "w-6 bg-cyan-400" : "w-2 bg-white/20 hover:bg-white/40"
+                  currentIndex === idx ? "w-6 bg-cyan-500 dark:bg-cyan-400" : "w-2 bg-zinc-300 dark:bg-white/20 hover:bg-zinc-400 dark:hover:bg-white/40"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -88,14 +88,14 @@ const Spotlight = () => {
           </div>
           <button
             onClick={handlePrev}
-            className="w-9 h-9 rounded-xl bg-[#0B0F1A] border border-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+            className="w-9 h-9 rounded-xl bg-white hover:bg-zinc-100 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] border border-zinc-200 dark:border-white/10 hover:border-zinc-300 dark:hover:border-white/30 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer shadow-sm"
             aria-label="Previous game"
           >
             <FiChevronLeft className="text-base" />
           </button>
           <button
             onClick={handleNext}
-            className="w-9 h-9 rounded-xl bg-[#0B0F1A] border border-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+            className="w-9 h-9 rounded-xl bg-white hover:bg-zinc-100 dark:bg-[#0B0F1A] dark:hover:bg-[#111726] border border-zinc-200 dark:border-white/10 hover:border-zinc-300 dark:hover:border-white/30 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer shadow-sm"
             aria-label="Next game"
           >
             <FiChevronRight className="text-base" />
@@ -107,17 +107,17 @@ const Spotlight = () => {
       <div
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative rounded-2xl sm:rounded-[24px] bg-[#0B0F1A] border border-white/[0.08] p-4 sm:p-8 lg:p-10 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.85)] transition-all duration-700"
+        className="relative rounded-2xl sm:rounded-[24px] bg-white dark:bg-[#0B0F1A] border border-zinc-200 dark:border-white/[0.08] p-4 sm:p-8 lg:p-10 overflow-hidden shadow-xl dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)] transition-all duration-700"
       >
         {/* Dynamic Contextual Ambient Glow */}
         <div
-          className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full blur-[120px] opacity-35 transition-colors duration-1000"
+          className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full blur-[120px] opacity-25 dark:opacity-35 transition-colors duration-1000"
           style={{ backgroundColor: accentColor }}
         />
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: Cover Art with Ken Burns slow zoom */}
-          <div className="lg:col-span-7 relative rounded-2xl overflow-hidden aspect-[16/10] bg-black border border-white/10 shadow-2xl group">
+          <div className="lg:col-span-7 relative rounded-2xl overflow-hidden aspect-[16/10] bg-black border border-zinc-200 dark:border-white/10 shadow-2xl group">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeGame.id}
@@ -163,13 +163,13 @@ const Spotlight = () => {
               >
                 {/* Year + Genres */}
                 <div className="flex items-center flex-wrap gap-2">
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-zinc-300">
+                  <span className="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-xs font-mono text-zinc-700 dark:text-zinc-300">
                     {activeGame.released.slice(0, 4)}
                   </span>
                   {activeGame.genres.map((genre) => (
                     <span
                       key={genre.id}
-                      className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-cyan-400"
+                      className="px-2.5 py-1 rounded-md bg-cyan-50 dark:bg-white/5 border border-cyan-200 dark:border-white/10 text-xs font-mono text-cyan-700 dark:text-cyan-400 font-semibold"
                     >
                       {genre.name}
                     </span>
@@ -177,12 +177,12 @@ const Spotlight = () => {
                 </div>
 
                 {/* Game Title */}
-                <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+                <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-900 dark:text-white leading-tight transition-colors">
                   {activeGame.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[#A1A8B8] leading-relaxed line-clamp-3">
+                <p className="text-sm text-zinc-600 dark:text-[#A1A8B8] leading-relaxed line-clamp-3 transition-colors">
                   {activeGame.description_raw}
                 </p>
 
@@ -199,7 +199,7 @@ const Spotlight = () => {
                 </div>
 
                 {/* Animated Metacritic Ring & CTA Row */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+                <div className="pt-4 border-t border-zinc-200 dark:border-white/10 flex items-center justify-between gap-4">
                   {/* Circular Gauge */}
                   <div className="flex items-center gap-3">
                     <div className="relative w-16 h-16 flex items-center justify-center flex-shrink-0">
@@ -208,7 +208,8 @@ const Spotlight = () => {
                           cx="38"
                           cy="38"
                           r={radius}
-                          stroke="rgba(255,255,255,0.08)"
+                          stroke="currentColor"
+                          className="text-zinc-200 dark:text-white/[0.08]"
                           strokeWidth="6"
                           fill="transparent"
                         />
@@ -226,16 +227,16 @@ const Spotlight = () => {
                           transition={{ duration: 1.2, ease: "easeOut" }}
                         />
                       </svg>
-                      <span className="absolute font-mono font-black text-sm text-white">
+                      <span className="absolute font-mono font-black text-sm text-zinc-900 dark:text-white">
                         {score}
                       </span>
                     </div>
 
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold text-white font-mono">
+                      <span className="text-xs font-bold text-zinc-900 dark:text-white font-mono">
                         METACRITIC
                       </span>
-                      <span className="text-[11px] font-mono text-zinc-400">
+                      <span className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
                         {isHigh ? "UNIVERSAL ACCLAIM" : "GENERALLY FAVORABLE"}
                       </span>
                     </div>
@@ -244,7 +245,7 @@ const Spotlight = () => {
                   {/* Open in Archive Action */}
                   <button
                     onClick={() => navigate(`/game/${activeGame.id}`)}
-                    className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-400 text-white font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-lg group"
+                    className="flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-white/10 dark:hover:bg-white/20 border border-zinc-900 dark:border-white/20 hover:border-cyan-500 dark:hover:border-cyan-400 text-white font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md group"
                   >
                     <span>OPEN IN ARCHIVE</span>
                     <FiArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-cyan-400" />

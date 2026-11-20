@@ -3,12 +3,14 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { LOCAL_GAMES } from "../../Data/localGames";
 import GameCoverImage from "../common/GameCoverImage";
 import getCroppedImageURL from "../../services/image-url";
+import { useTheme } from "../../context/ThemeContext";
 
 interface CoverWallProps {
   selectedPlatformId: number;
 }
 
 const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
+  const { isDark } = useTheme();
   const prefersReducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
 
@@ -68,10 +70,10 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
                 return (
                   <div
                     key={`${game.id}-${colIdx}-${itemIdx}`}
-                    className={`relative rounded-xl overflow-hidden aspect-[3/4] bg-[#0B0F1A] border border-white/10 shadow-2xl transition-all duration-500 ${
+                    className={`relative rounded-xl overflow-hidden aspect-[3/4] bg-white dark:bg-[#0B0F1A] border border-zinc-200 dark:border-white/10 shadow-lg dark:shadow-2xl transition-all duration-500 ${
                       isMatchingPlatform
-                        ? "opacity-90 scale-100 ring-1 ring-cyan-400/30"
-                        : "opacity-20 grayscale scale-95"
+                        ? "opacity-90 scale-100 ring-1 ring-cyan-500/40 dark:ring-cyan-400/30"
+                        : "opacity-25 grayscale scale-95"
                     }`}
                   >
                     <GameCoverImage
@@ -82,7 +84,7 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20" />
-                    <span className="absolute bottom-2 left-2 right-2 text-[10px] font-mono tracking-wider text-zinc-300 truncate uppercase font-semibold">
+                    <span className="absolute bottom-2 left-2 right-2 text-[10px] font-mono tracking-wider text-zinc-200 truncate uppercase font-semibold">
                       {game.name}
                     </span>
                   </div>
@@ -93,16 +95,15 @@ const CoverWall = ({ selectedPlatformId }: CoverWallProps) => {
         })}
       </motion.div>
 
-      {/* Radial Vignette & Dark Obsidian Veil so headline & CTAs stay 100% crisp and readable */}
+      {/* Radial Vignette & Theme-Adaptive Veil so headline & CTAs stay 100% crisp and readable */}
       <div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 transition-colors duration-500"
         style={{
-          background: `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(5,7,13,0.35) 0%, rgba(5,7,13,0.85) 65%, #05070D 100%)`,
+          background: isDark
+            ? `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(5,7,13,0.35) 0%, rgba(5,7,13,0.85) 65%, #05070D 100%)`
+            : `radial-gradient(ellipse 70% 60% at 50% 45%, rgba(248,249,250,0.35) 0%, rgba(248,249,250,0.88) 65%, #F8F9FA 100%)`,
         }}
       />
-
-      {/* Secondary Bottom Gradient Falloff into next section */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#05070D] via-[#05070D]/90 to-transparent z-10" />
     </div>
   );
 };

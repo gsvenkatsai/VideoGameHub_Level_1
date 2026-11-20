@@ -112,7 +112,7 @@ const SearchPalette = () => {
     <div ref={containerRef} className="relative w-full max-w-xl mx-auto z-40">
       <form onSubmit={handleSubmitSearch} className="relative">
         <div className="relative flex items-center group">
-          <FiSearch className="absolute left-4.5 text-zinc-400 group-focus-within:text-cyan-400 text-base transition-colors" />
+          <FiSearch className="absolute left-4.5 text-zinc-400 group-focus-within:text-cyan-500 dark:group-focus-within:text-cyan-400 text-base transition-colors" />
 
           <input
             ref={inputRef}
@@ -126,15 +126,15 @@ const SearchPalette = () => {
             onFocus={() => setIsOpen(true)}
             onKeyDown={handleKeyDownInInput}
             placeholder="Search 500,000+ games... (try 'Witcher', 'GTA', 'Spider-Man')"
-            className="w-full pl-12 pr-28 py-3.5 rounded-xl bg-[#0B0F1A]/90 hover:bg-[#111726]/90 focus:bg-[#111726] border border-white/10 hover:border-white/20 focus:border-cyan-400/80 text-sm text-white placeholder-zinc-500 font-sans tracking-wide backdrop-blur-xl transition-all duration-200 outline-none shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] focus:ring-2 focus:ring-cyan-400/30"
+            className="w-full pl-12 pr-28 py-3.5 rounded-xl bg-white/95 dark:bg-[#0B0F1A]/90 hover:bg-white dark:hover:bg-[#111726]/90 focus:bg-white dark:focus:bg-[#111726] border border-zinc-300 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/20 focus:border-cyan-500 dark:focus:border-cyan-400/80 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 font-sans tracking-wide backdrop-blur-xl transition-all duration-200 outline-none shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] focus:ring-2 focus:ring-cyan-500/20 dark:focus:ring-cyan-400/30"
           />
 
           {/* Shortcut Badges */}
           <div className="absolute right-3.5 flex items-center gap-1.5 pointer-events-none">
-            <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono tracking-wider font-semibold text-zinc-400 bg-white/5 border border-white/10 rounded">
+            <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded">
               ⌘K
             </kbd>
-            <kbd className="px-1.5 py-0.5 text-[10px] font-mono tracking-wider font-semibold text-zinc-400 bg-white/5 border border-white/10 rounded">
+            <kbd className="px-1.5 py-0.5 text-[10px] font-mono tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded">
               /
             </kbd>
           </div>
@@ -149,16 +149,16 @@ const SearchPalette = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 4, scale: 0.98 }}
             transition={{ duration: 0.18 }}
-            className="absolute top-full left-0 right-0 mt-2 p-2 rounded-2xl bg-[#0B0F1A]/95 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_20px_rgba(34,211,238,0.1)] overflow-hidden z-50 max-h-[380px] overflow-y-auto"
+            className="absolute top-full left-0 right-0 mt-2 p-2 rounded-2xl bg-white/98 dark:bg-[#0B0F1A]/95 backdrop-blur-2xl border border-zinc-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.15),0_0_20px_rgba(34,211,238,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_20px_rgba(34,211,238,0.1)] overflow-hidden z-50 max-h-[380px] overflow-y-auto"
           >
             {combinedGames.length > 0 ? (
               <div className="space-y-1">
-                <div className="px-3 py-1.5 text-[10px] font-mono tracking-widest uppercase text-zinc-500 border-b border-white/5 flex justify-between items-center">
+                <div className="px-3 py-1.5 text-[10px] font-mono tracking-widest uppercase text-zinc-500 border-b border-zinc-200 dark:border-white/5 flex justify-between items-center">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     INSTANT ARCHIVE MATCHES
                   </span>
-                  <span className="text-cyan-400 font-bold">{combinedGames.length} RESULTS</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-bold">{combinedGames.length} RESULTS</span>
                 </div>
                 {combinedGames.map((game, idx) => (
                   <button
@@ -167,12 +167,12 @@ const SearchPalette = () => {
                     onMouseEnter={() => setSelectedIndex(idx)}
                     className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left transition-all cursor-pointer ${
                       selectedIndex === idx
-                        ? "bg-white/10 border border-cyan-400/30 text-white"
-                        : "hover:bg-white/5 text-zinc-300 border border-transparent"
+                        ? "bg-cyan-500/10 dark:bg-white/10 border border-cyan-500/30 dark:border-cyan-400/30 text-zinc-900 dark:text-white"
+                        : "hover:bg-zinc-100 dark:hover:bg-white/5 text-zinc-700 dark:text-zinc-300 border border-transparent"
                     }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 border border-white/10">
+                      <div className="w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 border border-zinc-200 dark:border-white/10">
                         <GameCoverImage
                           src={getCroppedImageURL(game.background_image)}
                           alt={game.name}
@@ -181,7 +181,7 @@ const SearchPalette = () => {
                         />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-sm font-semibold truncate text-white">
+                        <p className="text-sm font-semibold truncate text-zinc-900 dark:text-white">
                           {game.name}
                         </p>
                         <div className="flex items-center gap-2 mt-0.5">
@@ -199,7 +199,7 @@ const SearchPalette = () => {
 
                     <div className="flex items-center gap-2 flex-shrink-0 ml-3">
                       {game.metacritic && <CriticScore score={game.metacritic} />}
-                      <FiArrowRight className="text-zinc-500 text-xs" />
+                      <FiArrowRight className="text-zinc-400 dark:text-zinc-500 text-xs" />
                     </div>
                   </button>
                 ))}
@@ -210,13 +210,13 @@ const SearchPalette = () => {
                     setIsOpen(false);
                     navigate("/games");
                   }}
-                  className="w-full mt-2 py-2 text-center text-xs font-mono text-cyan-400 hover:text-cyan-300 hover:underline uppercase tracking-wider block"
+                  className="w-full mt-2 py-2 text-center text-xs font-mono text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:underline uppercase tracking-wider block"
                 >
                   View all results for "{query}" in catalog →
                 </button>
               </div>
             ) : (
-              <div className="p-6 text-center text-xs font-mono text-zinc-400">
+              <div className="p-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-400">
                 NO TITLES FOUND IN LOCAL ARCHIVE FOR "{query}".
                 <button
                   onClick={() => {
@@ -224,7 +224,7 @@ const SearchPalette = () => {
                     setIsOpen(false);
                     navigate("/games");
                   }}
-                  className="mt-2 block mx-auto text-cyan-400 underline"
+                  className="mt-2 block mx-auto text-cyan-600 dark:text-cyan-400 underline font-semibold"
                 >
                   Search entire RAWG database →
                 </button>
