@@ -4,9 +4,9 @@ import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 const ErrorPage = () => {
   const error = useRouteError();
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-100 flex flex-col items-center justify-center gap-4">
-      <Heading>Oops..</Heading>
-      <Text className="text-zinc-500 dark:text-zinc-400">
+    <div className="min-h-screen bg-white dark:bg-[#000000] dark:text-white flex flex-col items-center justify-center gap-3">
+      <Heading color="inherit">Oops..</Heading>
+      <Text className="text-sm text-zinc-500 dark:text-[#5f6368]">
         {isRouteErrorResponse(error)
           ? "This page does not exist"
           : "An unexpected error occurred"}

@@ -9,24 +9,25 @@ const GameAttributes = ({ game }: Props) => {
   const { isDark } = useTheme();
 
   const cardStyle = {
-    padding: "1rem",
-    borderRadius: "0.5rem",
-    backgroundColor: isDark ? "#5a5a7a" : "#e4e4e7",
-    border: `1px solid ${isDark ? "#6060a0" : "transparent"}`,
+    padding: "0.875rem",
+    borderRadius: "0.75rem",
+    backgroundColor: isDark ? "#161718" : "#f4f4f5",
+    border: `1px solid ${isDark ? "#2a2a2a" : "#e4e4e7"}`,
   };
 
   const labelStyle = {
-    fontSize: "0.7rem",
+    fontSize: "0.65rem",
     fontWeight: "700" as const,
     textTransform: "uppercase" as const,
-    letterSpacing: "0.05em",
-    color: isDark ? "#a0a0d0" : "#71717a",
-    marginBottom: "0.25rem",
+    letterSpacing: "0.08em",
+    color: isDark ? "#5f6368" : "#71717a",
+    marginBottom: "0.375rem",
   };
 
   const valueStyle = {
-    fontSize: "0.875rem",
-    color: isDark ? "#ffffff" : "#18181b",
+    fontSize: "0.8rem",
+    color: isDark ? "#dadce0" : "#18181b",
+    lineHeight: "1.6",
   };
 
   return (
