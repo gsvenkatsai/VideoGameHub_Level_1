@@ -28,11 +28,11 @@ const PlatfromIconList = ({ platforms }: Props) => {
     android: FaAndroid,
   };
   return (
-    <div className="flex gap-3 items-center py-2">
+    <div className="flex gap-2 items-center py-1">
       {platforms.map((platform) => {
         const IconComp = IconMap[platform.slug];
         return IconComp ? (
-          <IconComp key={platform.id} className="text-gray text-xl" />
+          <IconComp key={platform.id} className="text-zinc-400 dark:text-[#8b8b8b] text-sm" />
         ) : null;
       })}
     </div>

@@ -19,21 +19,40 @@ const PlatformSelecter = () => {
       <MenuButton
         as={Button}
         rightIcon={<BsChevronDown />}
-        bg={isDark ? "#1a1a2e" : "white"}
-        color={isDark ? "white" : "black"}
-        _hover={{ bg: isDark ? "#2a2a4e" : "gray.100" }}
-        _active={{ bg: isDark ? "#2a2a4e" : "gray.100" }}
+        bg={isDark ? "#121316" : "white"}
+        color={isDark ? "#e8eaed" : "black"}
+        fontSize="xs"
+        fontWeight="500"
+        border="1px solid"
+        borderColor={isDark ? "rgba(255,255,255,0.12)" : "gray.200"}
+        _hover={{
+          bg: isDark ? "#18191e" : "gray.100",
+          borderColor: isDark ? "rgba(255,255,255,0.25)" : "gray.300",
+        }}
+        _active={{ bg: isDark ? "#18191e" : "gray.100" }}
+        borderRadius="lg"
+        height="8"
+        px="3"
+        transition="all 0.15s ease"
       >
         {selectedPlatform?.name || "Platforms"}
       </MenuButton>
-      <MenuList bg={isDark ? "#1a1a2e" : "white"} borderColor={isDark ? "#2a2a4e" : "gray.200"}>
+      <MenuList
+        bg={isDark ? "#121316" : "white"}
+        borderColor={isDark ? "rgba(255,255,255,0.12)" : "gray.200"}
+        borderRadius="lg"
+        boxShadow="xl"
+        p="1"
+      >
         {data?.results.map((platform) => (
           <MenuItem
             onClick={() => setSelectedPlatformId(platform.id)}
             key={platform.id}
-            bg={isDark ? "#1a1a2e" : "white"}
-            color={isDark ? "white" : "black"}
-            _hover={{ bg: isDark ? "#2a2a4e" : "gray.100" }}
+            bg={isDark ? "#121316" : "white"}
+            color={isDark ? "#e8eaed" : "black"}
+            fontSize="xs"
+            borderRadius="md"
+            _hover={{ bg: isDark ? "rgba(255,255,255,0.06)" : "gray.100" }}
           >
             {platform.name}
           </MenuItem>

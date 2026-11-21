@@ -6,14 +6,14 @@ import SortSelector from "../components/SortSelector";
 
 const HomePage = () => {
   return (
-    <div className="grid grid-cols-1 min-[450px]:grid-cols-[1fr_6fr]">
-      <aside className="bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 p-4 hidden min-[450px]:block">
+    <div className="grid grid-cols-1 min-[450px]:grid-cols-[240px_1fr]">
+      <aside className="bg-white dark:bg-[#090a0d]/70 dark:backdrop-blur-md border-r border-zinc-200/90 dark:border-white/[0.08] shadow-sm dark:shadow-[4px_0_24px_rgba(0,0,0,0.5)] p-5 hidden min-[450px]:block min-h-screen">
         <GenreList />
       </aside>
-      <main className="bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-100 p-4">
+      <main className="bg-transparent text-zinc-900 dark:text-white p-6">
         <GameHeading />
-        <div className="space-y-6">
-          <div className="flex gap-10">
+        <div className="space-y-5 mt-2">
+          <div className="flex gap-3">
             <PlatformSelecter />
             <SortSelector />
           </div>

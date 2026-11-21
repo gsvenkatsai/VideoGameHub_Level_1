@@ -4,24 +4,20 @@ const GameCardSkeleton = () => {
   return (
     <Card>
       {/* Image Skeleton */}
-      <div className="w-full h-48 bg-gray-700 animate-pulse"></div>
+      <div className="w-full h-44 bg-zinc-200 dark:bg-[#1f1f1f] animate-pulse"></div>
 
-      <div className="p-4 space-y-3">
-        {/* Title Skeleton */}
-        <div className="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
-
-        {/* Bottom Row */}
+      <div className="px-4 pb-4 pt-3 space-y-3">
+        {/* Platform + score row */}
         <div className="flex items-center justify-between">
-          {/* Platform Icons Skeleton */}
           <div className="flex gap-2">
-            <div className="w-5 h-5 bg-gray-700 rounded-full animate-pulse"></div>
-            <div className="w-5 h-5 bg-gray-700 rounded-full animate-pulse"></div>
-            <div className="w-5 h-5 bg-gray-700 rounded-full animate-pulse"></div>
+            <div className="w-4 h-4 bg-zinc-200 dark:bg-[#303030] rounded animate-pulse"></div>
+            <div className="w-4 h-4 bg-zinc-200 dark:bg-[#303030] rounded animate-pulse"></div>
           </div>
-
-          {/* Critic Score Skeleton */}
-          <div className="w-10 h-6 bg-gray-700 rounded animate-pulse"></div>
+          <div className="w-8 h-5 bg-zinc-200 dark:bg-[#303030] rounded animate-pulse"></div>
         </div>
+        {/* Title Skeleton */}
+        <div className="h-3.5 bg-zinc-200 dark:bg-[#303030] rounded w-3/4 animate-pulse"></div>
+        <div className="h-3 bg-zinc-200 dark:bg-[#1f1f1f] rounded w-1/2 animate-pulse"></div>
       </div>
     </Card>
   );

@@ -1,9 +1,12 @@
-//to get images in requird resolution
+//to get images in required resolution
 import noImage from '../assets/NoImage.jpg'
 const getCroppedImageURL = (url:string) =>{
     if (!url || url.trim() === '') return noImage;
-    const index = url.indexOf('media/') + 'media/'.length;
-    // here we are making  urlupto media+ crop/600/400 + remaining url
-    return url.slice(0,index) + 'crop/600/400' + url.slice(index);
+    if (url.includes('crop/')) return url;
+    const target = 'media/';
+    const index = url.indexOf(target);
+    if (index === -1) return url;
+    const insertIndex = index + target.length;
+    return url.slice(0, insertIndex) + 'crop/600/400/' + url.slice(insertIndex);
 }
 export default getCroppedImageURL

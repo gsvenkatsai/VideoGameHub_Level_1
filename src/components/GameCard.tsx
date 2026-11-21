@@ -18,35 +18,33 @@ const GameCard = ({ game }: Props) => {
   return (
     // Card is a wrapper component that provides layout + styling
     <Card>
-      <Link to={"/game/" + game.id}>
-        {/* 
-        Render image only if it exists.
-        Some API responses may return null background_image.
-        Defensive rendering prevents runtime errors.
-      */}
-        {game.background_image && (
-          <img
-            src={game.background_image} // Image URL from API
-            alt={game.name} // Accessibility improvement
-            className="w-full h-48 object-cover"
-            /*
-            w-full → full width of card
-            h-48 → fixed height for consistent layout
-            object-cover → prevents distortion, crops properly
-          */
-          />
-        )}
+      <Link to={"/game/" + game.id} className="block">
+        {/* Image with subtle bottom vignette */}
+        <div className="relative w-full h-44 overflow-hidden bg-zinc-100 dark:bg-zinc-950">
+          {game.background_image ? (
+            <img
+              src={game.background_image}
+              alt={game.name}
+              className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300 ease-out"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-xs font-mono text-zinc-400 dark:text-zinc-600">
+              NO IMAGE
+            </div>
+          )}
+          {/* Subtle gradient vignette to blend image into the card */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-[#111215] via-transparent to-transparent opacity-60" />
+        </div>
 
         {/* Content section */}
-        <div className="p-4">
-          {/* Game title */}
-          <div className="flex items-center justify-between w-full p-4 col-span-2">
+        <div className="p-3.5">
+          <div className="flex items-center justify-between w-full mb-1.5">
             <PlatfromIconList
-              platforms={game.parent_platforms.map((p) => p.platform)}
+              platforms={game.parent_platforms?.map((p) => p.platform) || []}
             />
             <CriticScore score={game.metacritic} />
           </div>
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-sm font-semibold leading-snug text-zinc-900 dark:text-white tracking-tight">
             {game.name}
             <Emoji rating={game.rating_top} />
           </h2>
